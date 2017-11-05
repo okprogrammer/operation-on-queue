@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/* Creating a structure of two fields data and next pointer of type struct node which is indicating the node*/
 struct node
 {
     int data;
@@ -8,6 +8,7 @@ struct node
 };
 struct node* front;
 struct node* rear;
+/*Adding element in the queue*/
 void Enqueue(int x)
 {
     struct node* temp=(struct node*)malloc(sizeof(struct node));
@@ -25,6 +26,7 @@ void Enqueue(int x)
     rear=temp;
     temp->next=NULL;x
 }
+/*Deleting element from the queue*/
 void Dequeue()
 {
     if(front==NULL)
@@ -36,6 +38,7 @@ void Dequeue()
     front=temp2->next;
     free(temp2);
 }
+/* To display the data of queue*/
 void Display()
 {
     if(front==NULL)
@@ -57,6 +60,8 @@ int main()
     struct node* rear=NULL;
     struct node* front=NULL;
     int x,i,n,choice;
+    /* in this while loop is always true*/
+    /*By using this we can perform various operation at a time*/
     while(1)
     {
         printf("1. Insert an element in the Queue!\n");
